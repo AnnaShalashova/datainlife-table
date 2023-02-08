@@ -10,7 +10,7 @@ const TableRow = ({ product }) => {
     const amount = selected[gid]?.amount || 0;
     const sum = +amount * +gprice;
 
-    const handleSetQuentity = ({amount, id, price}) => {
+    const handleSetQuantity = ({amount, id, price}) => {
         if (amount === 0) {
             dispatch({ type: "DELETE_POSITION", payload: { amount, id, price } });
             return;
@@ -25,7 +25,7 @@ const TableRow = ({ product }) => {
             <td>{gname}</td>   
             <td>{gprice} ₽</td>
             <td className="quantity"><input type="number"
-                min="0" onInput={(e) => handleSetQuentity({
+                min="0" onInput={(e) => handleSetQuantity({
                     amount: Number(e.target.value),
                     id: gid,
                     price: Number(gprice),

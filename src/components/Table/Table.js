@@ -9,13 +9,12 @@ const Table = () => {
     const productSections = useSelector(state => state.products);
     const selected = useSelector(s => s.selected);
     const { idSection } = useParams();
-    
 
-    const sectionName = idSection ? productSections.map(section => {
-        if (section.rid === idSection) {
+    const sectionName = idSection ? (productSections.map((section) => {
+        if (section.rid !== idSection) {
             return section.rname;
         }
-    }) : "Все товары";
+    })) : "Все товары";
 
     const sortedProducts = idSection ? (
         productSections.filter(section => section.rid === idSection)

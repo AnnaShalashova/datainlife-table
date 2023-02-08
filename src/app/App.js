@@ -6,7 +6,6 @@ import SectionList from '../components/SectionList';
 import Table from '../components/Table';
 
 function App() {
-
   const dispatch = useDispatch();
 
   useEffect(() => {
