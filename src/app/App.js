@@ -22,8 +22,7 @@ function App() {
           <Route path="/:idSection" element={<Table /> }/>
         </Routes>
       </section>
-    </Router>
-    
+    </Router>   
   );
 }
 

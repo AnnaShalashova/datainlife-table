@@ -1,8 +1,10 @@
 import "./SectionList.css";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const SectionList = () => {
+    const [active, setActive] = useState();
     const productSections = useSelector(state => state.products);
 
     if (!productSections.length) {
@@ -22,7 +24,10 @@ const SectionList = () => {
             {productSections.map((section, i) => {
                 return (
                     <Link key={i} to={`/${section.rid}`}>
-                        <li>{section.rname}</li>
+                        <li onClick={() => setActive(section.rid)}
+                            className={active === section.rid ? "active_section" : "section"}>
+                            {section.rname}
+                        </li>
                     </Link>
                 )
             })}

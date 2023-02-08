@@ -27,9 +27,9 @@ export function* fetchProductsSaga() {
 
 export function* sendOrderSaga({payload}) {
     yield sendOrder(payload);
+    
     yield put({type: "DELETE_SELECTED_POSITIONS"})
 }
-
 
 export default function* rootSaga() {
     yield takeEvery('GET_DATA', fetchProductsSaga);

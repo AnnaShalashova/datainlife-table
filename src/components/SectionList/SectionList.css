@@ -51,4 +51,9 @@
     100% {
     transform: rotate(360deg);
     }
-} 
+}
+
+.section_list .active_section {
+    color: #900000;
+    background-color: #f7f5f6;
+}
